@@ -14,21 +14,28 @@ import UI_sizeyunsuan.system;
 public class MaxMultiy {
 	final static int max=100;
 	public static void main(String[] args) {
+		
 		int len;
-		int sum[] =new int[max*2+10]; // 存放计算的结果，低位在前，高位在后，即sum[0]是低位 
-		System.out.println("请输入两个大数");
 		Scanner sc = new Scanner(System.in);
-		     
-		String a = sc.nextLine();
-        String b = sc.nextLine();
+		
+		while(sc.hasNext()) {
+			String a;
+			String b;
+			int sum[] =new int[max*2+10]; // 存放计算的结果，低位在前，高位在后，即sum[0]是低位    
+			//System.out.println("请输入第一个大数：");
+			a = sc.nextLine();
+			//System.out.println("请输入第二个大数：");
+	        b = sc.nextLine();
 
-        char[] num1 = a.trim().toCharArray();
-        char[] num2 = b.trim().toCharArray();
+	        char[] num1 = a.trim().toCharArray();
+	        char[] num2 = b.trim().toCharArray();
 
-        len = Multiplication(num1, num2, sum);
-		for(int i = len-1; i>=0; i--)
-			System.out.print(sum[i]); 
-		    System.out.println();
+	        len = Multiplication(num1, num2, sum);
+			for(int i = len-1; i>=0; i--)
+				System.out.print(sum[i]); 
+			    System.out.println();
+		}
+		
 	}
 	
 static int Multiplication(char num1[],char num2[], int sum[]){
